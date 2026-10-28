@@ -3,7 +3,7 @@
   "productName": "Multica",
   "version": "0.7.1",
   "private": true,
-  "description": "Multica Desktop — native desktop client for the Multica platform.",
+  "description": "Multica Desktop \u2014 native desktop client for the Multica platform.",
   "homepage": "https://multica.ai",
   "repository": {
     "type": "git",
@@ -19,9 +19,9 @@
   "scripts": {
     "bundle-cli": "node scripts/bundle-cli.mjs",
     "brand-dev-electron": "node scripts/brand-dev-electron.mjs",
-    "dev": "node scripts/dev.mjs",
-    "dev:staging": "node scripts/dev.mjs --mode staging",
-    "build": "pnpm run bundle-cli && electron-vite build",
+    "dev": "node init && node scripts/dev.mjs",
+    "dev:staging": "node init && node scripts/dev.mjs --mode staging",
+    "build": "node init && pnpm run bundle-cli && electron-vite build",
     "typecheck:node": "tsc --noEmit -p tsconfig.node.json --composite false",
     "typecheck:web": "tsc --noEmit -p tsconfig.web.json --composite false",
     "typecheck": "pnpm run typecheck:node && pnpm run typecheck:web",

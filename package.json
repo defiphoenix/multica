@@ -4,13 +4,13 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev:web": "turbo dev --filter=@multica/web",
-    "dev:docs": "turbo dev --filter=@multica/docs",
-    "dev:desktop": "turbo dev --filter=@multica/desktop",
-    "dev:desktop:staging": "turbo dev:staging --filter=@multica/desktop",
-    "dev:mobile": "pnpm -C apps/mobile dev",
-    "dev:mobile:staging": "pnpm -C apps/mobile dev:staging",
-    "dev:mobile:prod": "pnpm -C apps/mobile dev:prod",
+    "dev:web": "node init && turbo dev --filter=@multica/web",
+    "dev:docs": "node init && turbo dev --filter=@multica/docs",
+    "dev:desktop": "node init && turbo dev --filter=@multica/desktop",
+    "dev:desktop:staging": "node init && turbo dev:staging --filter=@multica/desktop",
+    "dev:mobile": "node init && pnpm -C apps/mobile dev",
+    "dev:mobile:staging": "node init && pnpm -C apps/mobile dev:staging",
+    "dev:mobile:prod": "node init && pnpm -C apps/mobile dev:prod",
     "ios:mobile": "pnpm -C apps/mobile ios",
     "ios:mobile:staging": "pnpm -C apps/mobile ios:staging",
     "ios:mobile:prod": "pnpm -C apps/mobile ios:prod",
@@ -19,7 +19,7 @@
     "ios:mobile:device:staging:release": "pnpm -C apps/mobile ios:device:staging:release",
     "ios:mobile:device:prod": "pnpm -C apps/mobile ios:device:prod",
     "ios:mobile:device:prod:release": "pnpm -C apps/mobile ios:device:prod:release",
-    "build": "turbo build --filter=!@multica/mobile",
+    "build": "node init && turbo build --filter=!@multica/mobile",
     "typecheck": "turbo typecheck --filter=!@multica/mobile",
     "test": "turbo test --filter=!@multica/mobile",
     "lint": "turbo lint --filter=!@multica/mobile",
@@ -30,7 +30,7 @@
     "ui:add": "cd packages/ui && npx shadcn@latest add",
     "generate:attachment-text-preview": "node scripts/generate-attachment-text-preview.mjs",
     "generate:reserved-slugs": "node scripts/generate-reserved-slugs.mjs",
-    "dev:ui-lab": "pnpm --filter @multica/ui-lab dev"
+    "dev:ui-lab": "node init && pnpm --filter @multica/ui-lab dev"
   },
   "engines": {
     "node": ">=22"

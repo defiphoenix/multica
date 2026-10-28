@@ -4,9 +4,9 @@
   "private": true,
   "main": "expo-router/entry",
   "scripts": {
-    "dev": "expo start",
-    "dev:staging": "dotenv -e .env.staging -- cross-env APP_ENV=staging expo start",
-    "dev:prod": "dotenv -e .env.production.local -e .env.production -- cross-env APP_ENV=production expo start",
+    "dev": "node init && expo start",
+    "dev:staging": "node init && dotenv -e .env.staging -- cross-env APP_ENV=staging expo start",
+    "dev:prod": "node init && dotenv -e .env.production.local -e .env.production -- cross-env APP_ENV=production expo start",
     "ios": "./scripts/ios-run.sh",
     "ios:staging": "dotenv -e .env.staging -- cross-env APP_ENV=staging ./scripts/ios-run.sh",
     "ios:prod": "dotenv -e .env.production.local -e .env.production -- cross-env APP_ENV=production ./scripts/ios-run.sh",
